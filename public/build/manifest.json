@@ -1,0 +1,67 @@
+{
+  "__plugin-vue_export-helper-DlAUqK2U.js": {
+    "file": "assets/_plugin-vue_export-helper-DlAUqK2U.js",
+    "name": "_plugin-vue_export-helper"
+  },
+  "resources/js/Pages/BlockedPage.vue": {
+    "file": "assets/BlockedPage--vddzyzg.js",
+    "name": "BlockedPage",
+    "src": "resources/js/Pages/BlockedPage.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-DlAUqK2U.js"
+    ]
+  },
+  "resources/js/Pages/HelpPage.vue": {
+    "file": "assets/HelpPage-HyhKNxeD.js",
+    "name": "HelpPage",
+    "src": "resources/js/Pages/HelpPage.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-DlAUqK2U.js"
+    ]
+  },
+  "resources/js/Pages/Main.vue": {
+    "file": "assets/Main-DtEsQX9W.js",
+    "name": "Main",
+    "src": "resources/js/Pages/Main.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-DlAUqK2U.js"
+    ],
+    "css": [
+      "assets/Main-C0OZF5UD.css"
+    ]
+  },
+  "resources/js/Pages/MenuPage.vue": {
+    "file": "assets/MenuPage-BUs0h6cw.js",
+    "name": "MenuPage",
+    "src": "resources/js/Pages/MenuPage.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-DlAUqK2U.js"
+    ],
+    "css": [
+      "assets/MenuPage-Basl2SDm.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DVHz1MBG.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/MenuPage.vue",
+      "resources/js/Pages/HelpPage.vue",
+      "resources/js/Pages/BlockedPage.vue",
+      "resources/js/Pages/HelpPage.vue",
+      "resources/js/Pages/Main.vue",
+      "resources/js/Pages/MenuPage.vue"
+    ],
+    "css": [
+      "assets/app-DQYd82Rm.css"
+    ]
+  }
+}
