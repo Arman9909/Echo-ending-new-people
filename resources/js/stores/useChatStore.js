@@ -144,7 +144,8 @@ export const useChatStore = defineStore('chat', {
 
                 this.buttons = [
                     { text: "download_pdf", label: "📘 Скачать книгу" },
-                    { text: "download_audio", label: "🎧 Скачать аудиофайл" }
+                    { text: "download_audio", label: "🎧 Скачать аудиофайл" },
+                    { text: "/start", label: "Начать историю" }
                 ]
 
                 this.messages.push({ user_id: 1, text: this.selectedBook.title })
