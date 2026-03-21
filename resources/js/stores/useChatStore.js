@@ -95,6 +95,7 @@ export const useChatStore = defineStore('chat', {
                 return
             }
 
+
             // 🔥 ЛОКАЛЬНАЯ ЛОГИКА: выбор книги
             if (text.startsWith("select_book_")) {
                 const id = Number(text.replace("select_book_", ""))
@@ -148,7 +149,7 @@ export const useChatStore = defineStore('chat', {
                 this.buttons = [
                     { text: "download_pdf", label: "📘 Скачать книгу" },
                     { text: "download_audio", label: "🎧 Скачать аудиофайл" },
-                    { text: "/start_story", command: "📚 Начать историю" }
+                    { text: "/start_story", label: "📚 Начать историю" }
                 ]
             } else {
                 // Если книга НЕ выбрана — показываем кнопки сервера
