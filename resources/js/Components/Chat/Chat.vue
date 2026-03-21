@@ -48,8 +48,8 @@ export default {
                     { text: "Help", command: "/help" },
                     { text: "FAQ", command: "/faq" },
                     { text: "Restart", command: "/start" },
-                    { text: "Выбрать книгу", command: "choose_book" },
-                    { text: "Начать историю", command: "/start" }
+                    { text: "Выбрать книгу", command: "/choose_book" },
+                    { text: "Начать историю", command: "/start_story" }
 
                 ],
                 created_at: new Date().toISOString()

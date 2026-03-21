@@ -1,70 +1,3 @@
-<!--
-<template>
-    <form @submit.prevent="send" class="d-flex p-2 border-top bg-white">
-        <input
-            v-model="text"
-            class="form-control me-2"
-            placeholder="Введите сообщение..."
-        />
-
-        <button class="btn btn-primary">
-            <i class="fa-solid fa-paper-plane"></i>
-        </button>
-    </form>
-    <div class="bottom-buttons" v-if="store.buttons.length">
-        <button
-            v-for="btn in store.buttons"
-            :key="btn.text"
-            @click="send(btn.text)"
-            class="bottom-button"
-        >
-            {{ btn.label }}
-        </button>
-    </div>
-</template>
-
-<script>
-import { useChatStore } from '../../stores/useChatStore'
-
-export default {
-    setup() {
-        const store = useChatStore()
-        return { store }
-    },
-    props: {
-        conversationId: {
-            type: Number,
-            required: true
-        }
-    },
-
-    data() {
-        return {
-            text: ''
-        }
-    },
-
-    methods: {
-
-        async send() {
-            if (!this.text.trim()) return
-
-            const store = useChatStore()
-
-            await store.sendMessage(this.conversationId, this.text)
-
-            this.text = ''
-
-
-        },
-        async sendQuick(command) {
-            await this.store.sendMessage(this.conversationId, command)
-            this.store.buttons = [] // кнопки исчезают после клика
-            }
-    }
-}
-</script>
--->
 <template>
     <div>
         <form @submit.prevent="send" class="d-flex p-2 border-top bg-white">
@@ -96,9 +29,7 @@ export default {
                 {{ btn.label }}
             </button>
 
-            <button class="bot-button start-story-btn" @click="startStory">
-                Начать историю
-            </button>
+
 
 
 
@@ -208,17 +139,5 @@ export default {
     justify-content: center;
     align-items: center;
 }
-.start-story-btn {
-    width: 100%;
-    margin-top: 10px;
-    background: #ffd27f; /* тёплый жёлтый */
-    border: 1px solid #e0b45c;
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #4a2c00;
-    cursor: pointer;
-    transition: 0.2s;
-    text-align: center;
-}
+
 </style>

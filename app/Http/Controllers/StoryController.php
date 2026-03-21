@@ -64,4 +64,16 @@ class StoryController extends Controller
             'ending' => $ending
         ]);
     }
+    public function handle(Request $request)
+    {
+        $text = $request->input("text");
+        $conversationId = $request->input("conversation_id");
+
+        $handler = new BotHandler();
+        $response = $handler->process($text, $conversationId);
+
+        return response()->json([
+            "bot_message" => $response
+        ]);
+    }
 }

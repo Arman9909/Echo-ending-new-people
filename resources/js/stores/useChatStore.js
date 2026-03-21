@@ -1,29 +1,3 @@
-/*import { defineStore } from 'pinia'
-import axios from '../api/axios'
-
-export const useChatStore = defineStore('chat', {
-    state: () => ({
-        messages: [],
-        loading: false,
-    }),
-
-    actions: {
-        async loadMessages(conversationId) {
-            this.loading = true
-            const res = await axios.get(`/messages/${conversationId}`)
-            this.messages = res.data
-            this.loading = false
-        },
-
-        async sendMessage(conversationId, text) {
-            const res = await axios.post(`/messages`, {
-                conversation_id: conversationId,
-                text
-            })
-            this.messages.push(res.data)
-        }
-    }
-})*/
 import { defineStore } from 'pinia'
 import axios from '../api/axios'
 
@@ -71,23 +45,7 @@ export const useChatStore = defineStore('chat', {
             this.loading = false
         },
 
-        /*async sendMessage(conversationId, text) {
-            const res = await axios.post('/chat/send', {
-                conversation_id: conversationId,
-                text
-            })
 
-            // Добавляем сообщение пользователя
-            this.messages.push(res.data.user_message)
-            // Добавляем сообщение бота
-            this.messages.push(res.data.bot_message)
-            if (response.data.bot_message.buttons) {
-                this.buttons = response.data.bot_message.buttons
-            } else {
-                this.buttons = []
-            }
-
-        }*/
         async sendMessage(conversationId, text) {
             // 🔥 ЛОКАЛЬНАЯ ЛОГИКА: команда /start
             if (text === "/start") {
@@ -117,7 +75,7 @@ export const useChatStore = defineStore('chat', {
                 // добавляем кнопку "Выбрать книгу"
                 this.buttons.push({
                     text: "choose_book",
-                    label: "Выбрать книгу"
+                    label: "📚 Выбрать книгу"
                 })
 
                 return
@@ -145,7 +103,10 @@ export const useChatStore = defineStore('chat', {
                 this.buttons = [
                     { text: "download_pdf", label: "📘 Скачать книгу" },
                     { text: "download_audio", label: "🎧 Скачать аудиофайл" },
-                    { text: "/start", label: "Начать историю" }
+                    { text: "/start_story", label: "📚 Начать историю", isCommand: true }
+
+
+
                 ]
 
                 this.messages.push({ user_id: 1, text: this.selectedBook.title })
@@ -186,17 +147,13 @@ export const useChatStore = defineStore('chat', {
             if (this.selectedBook) {
                 this.buttons = [
                     { text: "download_pdf", label: "📘 Скачать книгу" },
-                    { text: "download_audio", label: "🎧 Скачать аудиофайл" }
+                    { text: "download_audio", label: "🎧 Скачать аудиофайл" },
+                    { text: "/start_story", command: "📚 Начать историю" }
                 ]
             } else {
                 // Если книга НЕ выбрана — показываем кнопки сервера
                 this.buttons = res.data.bot_message.buttons ?? []
             }
-
-
-
-
-
         }
     }
 })

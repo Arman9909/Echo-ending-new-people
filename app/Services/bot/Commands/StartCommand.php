@@ -14,8 +14,10 @@ class StartCommand
             'buttons' => [
                 ['text' => '/help', 'label' => '📘 Help'],
                 ['text' => '/faq', 'label' => '❓ FAQ'],
+
                 ['text' => '/start', 'label' => '🔄 Restart'],
             ]
+
         ];
     }
 }
