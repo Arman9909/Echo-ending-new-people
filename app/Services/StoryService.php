@@ -25,7 +25,7 @@ class StoryService
                 "image" => "ded_i_babka.jpg",
                 "audio" => null,
                 "choices" => [
-                    ["label" => "Попробовать снова", "next" => "start"]
+                    ["label" => "Попробовать снова", "next" => "start_story"]
                 ]
             ],
 
@@ -137,7 +137,7 @@ class StoryService
                 "image" => null,
                 "audio" => null,
                 "choices" => [
-                    ["label" => "Попробовать снова", "next" => "start"]
+                    ["label" => "Попробовать снова", "next" => "start_story"]
                 ]
             ],
 
@@ -146,7 +146,7 @@ class StoryService
                 "image" => null,
                 "audio" => null,
                 "choices" => [
-                    ["label" => "Попробовать снова", "next" => "start"]
+                    ["label" => "Попробовать снова", "next" => "start_story"]
                 ]
             ],
 

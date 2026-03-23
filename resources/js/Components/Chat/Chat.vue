@@ -22,7 +22,7 @@ export default {
     methods: {
         handleButtonClick(btn) {
             const store = useChatStore()
-            store.sendMessage(btn.command || btn.text)
+            store.sendMessage(this.conversationId, btn.command || btn.text)
         }
     },
 
